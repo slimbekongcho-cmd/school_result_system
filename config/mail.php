@@ -7,7 +7,7 @@
 */
 
 // The Gmail address you created the App Password for
-define('MAIL_USERNAME', 'cot-result.notifications@gmail.com');
+define('MAIL_USERNAME', 'uniresult.notifications@gmail.com');
 
 // Paste the 16-character App Password here.
 // REMOVE ALL SPACES from the App Password.
@@ -22,3 +22,5 @@ define('MAIL_FROM_NAME', 'COT-Result System');
 
 // Usually the same Gmail address
 define('MAIL_FROM_ADDRESS', MAIL_USERNAME);
+
+define('SITE_URL', 'http://localhost/uni');

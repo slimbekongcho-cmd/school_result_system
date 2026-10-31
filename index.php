@@ -721,7 +721,10 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-<?php include __DIR__ . '/brand.html'; ?>
+<?php
+$logo_admin_shortcut = false;
+include __DIR__ . '/brand.html';
+?>
     <div class="nav-links">
         <a href="index.php">Home</a>
         <a href="#features">Features</a>
@@ -897,7 +900,10 @@
     <div class="footer-grid">
 
         <div class="footer-brand">
-           <?php include __DIR__ . '/brand.html'; ?>
+           <?php
+$logo_admin_shortcut = true;
+include __DIR__ . '/brand.html';
+?>
             <p>An academic result management system built to make results clear, secure and easy to reach for every student, lecturer and administrator.</p>
         </div>
 

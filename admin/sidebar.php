@@ -48,6 +48,10 @@ $active = $active ?? '';
             📝 Results
         </a>
 
+        <a href="account.php" class="<?= $active === 'account' ? 'active' : '' ?>">
+            ⚙️ My Account
+        </a>
+
         <a href="adminlogout.php">
             🚪 Logout
         </a>

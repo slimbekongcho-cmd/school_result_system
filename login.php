@@ -540,7 +540,7 @@ if (isset($_GET['error'])) {
                 </div>
 
                 <div class="form-meta">
-                    <a href="#" class="forgot-link">Forgot password?</a>
+                    <a href="forgot_password.php" class="forgot-link">Forgot password?</a>
                 </div>
 
                 <button type="submit" class="login-submit">

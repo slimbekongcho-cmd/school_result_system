@@ -83,7 +83,7 @@ function getResultNotificationData($conn, $result_id)
 
     $stmt = mysqli_prepare($conn, $sql);
     if (!$stmt) {
-        error_log("UniResult notification query failed: " . mysqli_error($conn));
+        error_log("COT-Result notification query failed: " . mysqli_error($conn));
         return null;
     }
 
@@ -109,7 +109,7 @@ function notifyResultParty($data, $recipient, $remark = '')
     }
 
     if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        error_log("UniResult notification skipped: invalid/missing {$recipient} email for result #{$data['result_id']}");
+        error_log("COT-Result notification skipped: invalid/missing {$recipient} email for result #{$data['result_id']}");
         return false;
     }
 
@@ -122,17 +122,17 @@ function notifyResultParty($data, $recipient, $remark = '')
 
     switch ($data['status']) {
         case 'Under Review':
-            $subject = 'UniResult: Your result is under review';
+            $subject = 'COT-Result: Your result is under review';
             $message = "<p>Hello {$recipientName},</p>
                 <p>The result you submitted for <strong>{$courseCode} - {$courseTitle}</strong>
                 for <strong>{$studentName}</strong> (Matricule: <strong>{$matricule}</strong>)
                 is now <strong>Under Review</strong> by the administrator.</p>
                 <p>You will be notified when the review is completed.</p>
-                <p>Regards,<br><strong>UniResult System</strong></p>";
+                <p>Regards,<br><strong>COT-Result System</strong></p>";
             break;
 
         case 'Returned':
-            $subject = 'UniResult: Result returned for correction';
+            $subject = 'COT-Result: Result returned for correction';
             $message = "<p>Hello {$recipientName},</p>
                 <p>The result for <strong>{$courseCode} - {$courseTitle}</strong>
                 for <strong>{$studentName}</strong> (Matricule: <strong>{$matricule}</strong>)
@@ -140,36 +140,36 @@ function notifyResultParty($data, $recipient, $remark = '')
                 <p><strong>Administrator's remark:</strong></p>
                 <p>{$remarkHtml}</p>
                 <p>Please correct the result and submit it again.</p>
-                <p>Regards,<br><strong>UniResult System</strong></p>";
+                <p>Regards,<br><strong>COT-Result System</strong></p>";
             break;
 
         case 'Approved':
-            $subject = 'UniResult: Result approved';
+            $subject = 'COT-Result: Result approved';
             $message = "<p>Hello {$recipientName},</p>
                 <p>The result for <strong>{$courseCode} - {$courseTitle}</strong>
                 for <strong>{$studentName}</strong> (Matricule: <strong>{$matricule}</strong>)
                 has been <strong>Approved</strong> by the administrator.</p>
                 <p>The result can now be published.</p>
-                <p>Regards,<br><strong>UniResult System</strong></p>";
+                <p>Regards,<br><strong>COT-Result System</strong></p>";
             break;
 
         case 'Published':
-            $subject = 'UniResult: Your result has been published';
+            $subject = 'COT-Result: Your result has been published';
             $message = "<p>Hello {$recipientName},</p>
                 <p>Your result for <strong>{$courseCode} - {$courseTitle}</strong>
                 has been <strong>Published</strong>.</p>
-                <p>You can now log in to your UniResult student account to view your result.</p>
-                <p>Regards,<br><strong>UniResult System</strong></p>";
+                <p>You can now log in to your COT-Result student account to view your result.</p>
+                <p>Regards,<br><strong>COT-Result System</strong></p>";
             break;
 
         case 'Deleted':
-            $subject = 'UniResult: Result deleted';
+            $subject = 'COT-Result: Result deleted';
             $message = "<p>Hello {$recipientName},</p>
                 <p>The result for <strong>{$courseCode} - {$courseTitle}</strong>
                 for <strong>{$studentName}</strong> (Matricule: <strong>{$matricule}</strong>)
                 has been <strong>deleted</strong> by the administrator.</p>
-                <p>If this was unexpected, please contact the UniResult administrator.</p>
-                <p>Regards,<br><strong>UniResult System</strong></p>";
+                <p>If this was unexpected, please contact the COT-Result administrator.</p>
+                <p>Regards,<br><strong>COT-Result System</strong></p>";
             break;
 
         default:
@@ -1109,7 +1109,7 @@ $displayed_count =
 >
 
 <title>
-    UniResult - Results Management
+    COT-Result - Results Management
 </title>
 
 

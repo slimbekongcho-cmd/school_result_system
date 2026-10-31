@@ -130,7 +130,7 @@ function grade_class($letter) {
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<title>Result Statement - UniResult</title>
+<title>Result Statement - COT-Result</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -283,17 +283,9 @@ h1, h2 {
 }
 
 .header-logo-mark {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--light-blue), var(--blue));
-    color: var(--navy-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Sora", sans-serif;
-    font-size: 22px;
-    font-weight: 800;
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
     flex-shrink: 0;
 }
 
@@ -640,6 +632,12 @@ tbody tr:last-child td {
         font-size: 12px;
     }
 
+    /* Make sure background colours (navy table header, CGPA box, grade badges) actually print */
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
     .top-bar {
         display: none;
     }
@@ -664,9 +662,8 @@ tbody tr:last-child td {
     }
 
     .header-logo-mark {
-        width: 38px;
-        height: 38px;
-        font-size: 18px;
+        width: 52px;
+        height: 52px;
     }
 
     .header-brand h1 {
@@ -746,17 +743,17 @@ tbody tr:last-child td {
 
 <div class="result-container">
 
-    <div class="watermark"><span>UNIRESULT</span></div>
+    <div class="watermark"><span>COT-Result</span></div>
 
     <div class="doc-inner">
 
         <div class="header">
 
             <div class="header-brand">
-                <div class="header-logo-mark">U</div>
+                <img src="../assets/cot-logo.jpeg" alt="College of Technology, University of Buea" class="header-logo-mark">
                 <div>
-                    <h1>UniResult</h1>
-                    <p>Academic Result Management System</p>
+                    <h1>COT-Result</h1>
+                    <p>College of Technology · University of Buea</p>
                 </div>
             </div>
 
@@ -896,7 +893,7 @@ tbody tr:last-child td {
         <div class="verification">
 
             <p class="verification-note">
-                This is a system-generated statement of results issued by UniResult
+                This is a system-generated statement of results issued by COT-Result
                 on behalf of the university. Any alteration renders this document invalid.
             </p>
 

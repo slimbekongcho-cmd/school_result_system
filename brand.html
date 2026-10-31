@@ -1,4 +1,7 @@
-<div class="logo" style="display:flex;align-items:center;gap:10px;">
+<?php $admin_shortcut = !empty($logo_admin_shortcut); ?>
+<div class="logo"
+     style="display:flex;align-items:center;gap:10px;<?= $admin_shortcut ? 'user-select:none;' : '' ?>"
+     <?= $admin_shortcut ? 'ondblclick="window.location.href=\'/uni/admin/login.php\'"' : '' ?>>
     <img src="/uni/assets/cot-logo.jpeg" alt="College of Technology, University of Buea" style="width:36px;height:36px;object-fit:contain;">
     <span style="color:#fff;">COT-<span style="color:#7fbaff;">Result</span></span>
 </div>
